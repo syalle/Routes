@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FADADD;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <VBox spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <!-- Title -->
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Bus Route Booking System" />
+
+            <!-- Source and Destination Selection -->
+            <HBox spacing="15.0">
+                <Label text="Source City:" />
+                <ComboBox fx:id="sourceCityComboBox" prefWidth="150.0" onAction="#sourceCityComboBoxHandler" />
+                <Label text="Destination City:" />
+                <ComboBox fx:id="destinationComboBox" prefWidth="150.0" onAction="#onSelectDestination" />
+            </HBox>
+
+            <!-- Available Routes List -->
+            <VBox spacing="10.0">
+                <Label text="Available Routes:" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                <ListView fx:id="availableRoutesListView" prefHeight="200.0" />
+            </VBox>
+
+            <!-- Ticket Booking Section -->
+            <HBox spacing="15.0" alignment="CENTER_LEFT">
+                <Label text="Number of Tickets:" />
+                <TextField fx:id="ticketCountField" prefWidth="100.0" promptText="Enter ticket count" />
+                <Label text="Selected Route:" />
+                <Button fx:id="buttonBook" text="Book Tickets" onAction="#buttonBookHandler"/>
+                <Label fx:id="priceLabel" text="Total Price: $0.00" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+            </HBox>
+
+            <!-- Full Routes List -->
+            <VBox spacing="10.0">
+                <Label text="All Routes:" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+                <ListView fx:id="routeListView" prefHeight="200.0" />
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>
